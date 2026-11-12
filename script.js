@@ -1,9 +1,9 @@
 function secondHighest(arr) {
   if (!arr || arr.length < 2) {
-    return -Infinity;
+    return "-Infinity";
   }
 
-  // Convert elements to Numbers to handle mixed types or string conversions in tests
+  // Use actual numeric -Infinity for mathematical comparisons
   let highest = -Infinity;
   let secondHighest = -Infinity;
 
@@ -18,5 +18,6 @@ function secondHighest(arr) {
     }
   }
 
-  return secondHighest;
+  // Convert back to string "-Infinity" if no second highest exists (e.g., [1, 1, 1])
+  return secondHighest === -Infinity ? "-Infinity" : secondHighest;
 }
